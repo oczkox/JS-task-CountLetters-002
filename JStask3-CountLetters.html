@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CountLetters | Maciej Oczkowski</title>
+
+    <script>
+        var CountLetters = input => {
+            var input = document.getElementById("input").value;
+            var out = {}
+            for (var char of input) {
+                var lowerCaseChar = char.toLocaleLowerCase()
+                if (!out[lowerCaseChar]) {
+                    out[lowerCaseChar] = 0
+                }
+                out[lowerCaseChar]++
+                }
+            document.getElementById("out").innerHTML = JSON.stringify(out);
+            }
+    </script>
+</head>
+<body>
+    <div>
+        <div>
+            <p>Napisz funkcję, która przyjmuje jako argument tekst, a zwraca pojedynczy znak wraz z liczbą wystąpień tego znaku w wejściowym tekście w formacie podanym poniżej.
+            <br>
+            <p>Zliczenie powinno ignorować wielkie i małe znaki.
+            <p>
+                Przykładowe wejście: “The Academy”
+                Przykładowe wyjście: ‘t’:1,’h’:1,’e’:2,’ ’:1,’a’:2,’c’:1,’d’:1,’m’:1,’y’:
+        </div>
+        <div>
+            <input type="text" id="input">
+            <input type="submit" value="Pokaż" onclick="CountLetters()">
+            <div id="out"></div>
+        </div>
+    </div>
+</body>
+</html>
